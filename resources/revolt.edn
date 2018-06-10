@@ -1,0 +1,53 @@
+{
+ ;; tasks
+
+ :revolt.task/clean { }
+
+ :revolt.task/aot   {:extra-namespaces [clout.core
+                                        mount.core
+                                        failjure.core
+                                        clojure.tools.logging.impl]}
+
+ :revolt.task/info  {:name "edge"
+                     :group "defunkt.edge"
+                     :version "0.0.1"
+                     :description "bleeding edge"}
+
+ :revolt.task/test  {:report :pretty}
+
+ :revolt.task/sass  {:resources ["styles/main.scss"]}
+
+ :revolt.task/codox {:source-paths ["src/clj"]
+                     :source-uri "http://github.com/mbuczko/edge/blob/{version}/{filepath}#L{line}"
+                     :namespaces [edge.http]}
+
+ :revolt.task/cljs  {:dist false
+                     :builds [{:id "main-ui"
+                               :figwheel true
+                               :source-paths ["src/cljs"]
+                               :compiler {:main "edge.main"
+                                          :output-to "scripts/main.js"
+                                          :output-dir "scripts/out"
+                                          :asset-path "scripts/out"
+                                          :preloads [devtools.preload]}}]}
+
+ :revolt.task/capsule {:exclude-paths #{"test" "src/cljs"}
+                       :output-jar "dist/edge.jar"
+                       :capsule-type :thin
+                       :main "edge.main"
+                       :min-java-version "1.8.0"
+                       :jvm-args "-server"
+                       :caplets {"MavenCapsule" [["Repositories" "central clojars(https://repo.clojars.org/)"]
+                                                 ["Allow-Snapshots" "true"]]}}
+
+ ;; plugins
+
+ :revolt.plugin/nrepl {:port 5600}
+
+ :revolt.plugin/rebel {:init-ns "edge.system"
+                       :init-banner "***** Hello World! *****"}
+
+ :revolt.plugin/watch {:excluded-paths ["src/clj"]
+                       :on-change {:revolt.task/sass "glob:assets/styles/*.scss"}}
+
+ :revolt.plugin/figwheel {:css-dirs ["assets"]}}
