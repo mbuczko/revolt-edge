@@ -5,4 +5,4 @@
 
 (defn -main [& args]
   (system/go)
-  (log/info "Edge started successfully."))
+  (log/info "edge started successfully"))

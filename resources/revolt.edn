@@ -37,6 +37,7 @@
                        :main "edge.main"
                        :min-java-version "1.8.0"
                        :jvm-args "-server"
+                       :system-properties "ENV=prod"
                        :caplets {"MavenCapsule" [["Repositories" "central clojars(https://repo.clojars.org/)"]
                                                  ["Allow-Snapshots" "true"]]}}
 
@@ -45,7 +46,7 @@
  :revolt.plugin/nrepl {:port 5600}
 
  :revolt.plugin/rebel {:init-ns "edge.system"
-                       :init-banner "***** Hello World! *****"}
+                       :init-banner "\n ***** Welcome to EDGE *****\n\n Usage:  (go)    => runs edge system\n         (reset) => restarts the system\n"}
 
  :revolt.plugin/watch {:excluded-paths ["src/clj"]
                        :on-change {:revolt.task/sass "glob:assets/styles/*.scss"}}

@@ -11,7 +11,7 @@
 
 (defroutes public-routes
   (GET  "/status" [] "ok")
-  (GET  "/" [] (selmer/render-file "index.html" {})))
+  (GET  "/" [] (selmer/render-file "templates/index.html" {})))
 
 (defroutes static-routes
   (route/resources "/styles"  {:root "styles"})
@@ -29,7 +29,6 @@
 
 (defn init-server []
   (log/info "starting http server")
-  (selmer/set-resource-path! (io/resource "templates"))
 
   ;; no caching for dev environment, please.
 

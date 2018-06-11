@@ -2,7 +2,6 @@
  :deps  {org.clojure/clojure {:mvn/version "1.9.0"}
          org.clojure/tools.namespace {:mvn/version "0.3.0-alpha4"}
          org.clojure/tools.logging {:mvn/version "0.4.1"}
-         org.clojure/clojurescript {:mvn/version "1.10.238"}
 
          mount {:mvn/version "0.1.12"}
          prone {:mvn/version "1.5.0"}
@@ -11,8 +10,8 @@
          ;; http client/server, routing, templating
          http-kit {:mvn/version "2.3.0-beta2"}
          compojure {:mvn/version "1.6.0"}
-         selmer {:mvn/version "1.11.7"}
          cheshire {:mvn/version "5.8.0"}
+         selmer {:mvn/version "1.11.7"}
 
          ;; monadic error handling
          failjure {:mvn/version "1.2.0"}
@@ -23,18 +22,13 @@
          ;; ring core and middlewares
          ring/ring-core {:mvn/version "1.6.3"}
          ring/ring-defaults {:mvn/version "0.3.1"}
-         ring-middleware-format {:mvn/version "0.7.2"}
-
-         ;; clojurescript dependencies
-         re-frame {:mvn/version "0.10.5"}
-         reagent {:mvn/version "0.8.0-alpha2"}}
+         ring-middleware-format {:mvn/version "0.7.2"}}
 
  :aliases {:dev {:extra-paths ["target/assets"]
-                 :extra-deps  {defunkt/revolt {:mvn/version "0.1.1"}
+                 :extra-deps  {defunkt/revolt {:mvn/version "0.1.4-SNAPSHOT"}
                                com.bhauman/rebel-readline {:mvn/version "0.1.3"}}
                  :main-opts    ["-m" "revolt.bootstrap"
-                                "-c" "revolt.edn"
-                                "-p" "nrepl,watch,figwheel,rebel"]}
+                                "-c" "revolt.edn"]}
 
            ;; dependencies for nrepl
            :dev/nrepl {:extra-deps {org.clojure/tools.nrepl {:mvn/version "0.2.13"}
@@ -42,8 +36,11 @@
                                     refactor-nrepl {:mvn/version "2.4.0-SNAPSHOT"}}}
 
            ;; dependencies for clojurescript builds
-           :dev/cljs {:extra-deps {binaryage/devtools {:mvn/version "0.9.9"}
-                                   figwheel-sidecar {:mvn/version "0.5.15"}}}
+           :dev/cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.238"}
+                                   re-frame {:mvn/version "0.10.5"}
+                                   reagent {:mvn/version "0.8.0-alpha2"}
+                                   figwheel-sidecar {:mvn/version "0.5.15"}
+                                   binaryage/devtools {:mvn/version "0.9.9"}}}
 
            ;; dependencies for packaging tasks
            :dev/pack {:extra-deps {co.paralleluniverse/capsule {:mvn/version "1.0.3"}
