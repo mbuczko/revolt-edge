@@ -4,16 +4,16 @@ This is a sample project making use of [defunkt/revolt](https://github.com/mbucz
 
 All the magic happens in `deps.edn` which contains a few _dev_ aliases with extra-dependencies required by certain plugins.
 
-* :dev - general development dependencies (revolt as dependency goes here)
-* :dev/nrepl - nrepl and cider-related dependencies.
-* :dev/cljs - clojurescript related dependencies along with all clojurescript libs used in project.
-* :dev/pack - packaging dependencies (capsule).
+* `:dev` - general development dependencies (revolt as dependency goes here)
+* `:dev/nrepl` - nrepl and cider-related dependencies.
+* `:dev/cljs` - clojurescript related dependencies along with all clojurescript libs used in project.
+* `:dev/pack` - packaging dependencies (capsule).
 
 Now, depending on needs some or all of theses aliases may be used by `clj` tool with `-A` parameter.
 
-Here are some examples.
+Here are some examples:
 
-### activate nRepl plugin only
+### activate nrepl plugin only
 ``` sh
 clj -A:dev:dev/nrepl -p nrepl
 ```
