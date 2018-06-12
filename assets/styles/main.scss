@@ -1,3 +1,26 @@
 body {
   min-width: 640px;
 }
+
+.intro {
+    background: #eee;
+    width: 920px;
+    margin: auto;
+    margin-top: 120px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 4px 10px #ddd;
+    text-shadow: 1px 1px white;
+
+    h1 {
+        text-align: center;
+    }
+    p {
+        color: #666;
+        text-align: center;
+    }
+    span {
+        color: blue;
+    }
+}

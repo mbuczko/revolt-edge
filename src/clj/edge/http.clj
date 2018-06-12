@@ -1,10 +1,12 @@
 (ns edge.http
-  (:require [clojure.java.io :as io]
-            [clojure.tools.logging :as log]
+  "Bunch of functions handling start-up and tear down of HTTP server.
+  Also, all routes and handler are defined here."
+
+  (:require [clojure.tools.logging :as log]
+            [compojure.core :refer [defroutes GET routes]]
+            [compojure.route :as route]
             [edge.config :refer [app-config]]
             [edge.middleware :as middleware]
-            [compojure.core :refer [defroutes ANY GET POST routes wrap-routes]]
-            [compojure.route :as route]
             [mount.core :as mount :refer [defstate]]
             [org.httpkit.server :as web]
             [selmer.parser :as selmer]))

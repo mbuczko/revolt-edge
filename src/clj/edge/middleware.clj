@@ -1,4 +1,6 @@
 (ns edge.middleware
+  "Production and development Ring middlewares."
+
   (:require [clojure.stacktrace :refer [root-cause]]
             [clojure.tools.logging :as log]
             [compojure.response :refer [Renderable]]

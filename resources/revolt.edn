@@ -9,9 +9,9 @@
                                         clojure.tools.logging.impl]}
 
  :revolt.task/info  {:name "edge"
-                     :group "defunkt.edge"
+                     :package defunkt.edge
                      :version "0.0.1"
-                     :description "bleeding edge"}
+                     :description "Sample project to see revolt in action."}
 
  :revolt.task/test  {:report :pretty}
 
@@ -19,7 +19,8 @@
 
  :revolt.task/codox {:source-paths ["src/clj"]
                      :source-uri "http://github.com/mbuczko/edge/blob/{version}/{filepath}#L{line}"
-                     :namespaces [edge.http]}
+                     :namespaces [edge.http
+                                  edge.middleware]}
 
  :revolt.task/cljs  {:dist false
                      :builds [{:id "main-ui"
