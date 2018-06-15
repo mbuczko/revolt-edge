@@ -24,7 +24,7 @@
          ring/ring-defaults {:mvn/version "0.3.1"}
          ring-middleware-format {:mvn/version "0.7.2"}}
 
- :aliases {:dev {:extra-deps  {defunkt/revolt {:mvn/version "0.1.4-SNAPSHOT"}}
+ :aliases {:dev {:extra-deps  {defunkt/revolt {:mvn/version "0.1.4"}}
                  :extra-paths ["target/assets"]
                  :main-opts   ["-m" "revolt.bootstrap"
                                "-c" "revolt.edn"]}

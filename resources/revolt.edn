@@ -22,9 +22,8 @@
                      :namespaces [edge.http
                                   edge.middleware]}
 
- :revolt.task/cljs  {:dist false
+ :revolt.task/cljs  {:optimizations :none
                      :builds [{:id "main-ui"
-                               :figwheel true
                                :source-paths ["src/cljs"]
                                :compiler {:main "edge.main"
                                           :output-to "scripts/main.js"
