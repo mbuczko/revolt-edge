@@ -1,8 +1,6 @@
 {
  ;; tasks
 
- :revolt.task/clean { }
-
  :revolt.task/aot   {:extra-namespaces [clout.core
                                         mount.core
                                         failjure.core
@@ -24,6 +22,7 @@
 
  :revolt.task/cljs  {:optimizations :none
                      :builds [{:id "main-ui"
+                               :figwheel true
                                :source-paths ["src/cljs"]
                                :compiler {:main "edge.main"
                                           :output-to "scripts/main.js"
@@ -49,6 +48,4 @@
                        :init-banner "\n ***** Welcome to EDGE *****\n\n Usage:  (go)    => runs edge system\n         (reset) => restarts the system\n"}
 
  :revolt.plugin/watch {:excluded-paths ["src/clj"]
-                       :on-change {:revolt.task/sass "glob:assets/styles/*.scss"}}
-
- :revolt.plugin/figwheel {:css-dirs ["assets"]}}
+                       :on-change {:revolt.task/sass "glob:assets/styles/*.scss"}}}
