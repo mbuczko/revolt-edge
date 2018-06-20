@@ -1,4 +1,4 @@
-{:paths ["assets" "src/clj" "src/cljs" "test" "resources"]
+{:paths ["src/clj" "src/cljs" "test" "resources" "assets"]
  :deps  {org.clojure/clojure {:mvn/version "1.9.0"}
          org.clojure/tools.namespace {:mvn/version "0.3.0-alpha4"}
          org.clojure/tools.logging {:mvn/version "0.4.1"}
@@ -24,7 +24,7 @@
          ring/ring-defaults {:mvn/version "0.3.1"}
          ring-middleware-format {:mvn/version "0.7.2"}}
 
- :aliases {:dev {:extra-deps  {defunkt/revolt {:mvn/version "0.1.5"}}
+ :aliases {:dev {:extra-deps  {defunkt/revolt {:mvn/version "0.1.6"}}
                  :extra-paths ["target/assets"]
                  :main-opts   ["-m" "revolt.bootstrap"
                                "-c" "revolt.edn"]}
