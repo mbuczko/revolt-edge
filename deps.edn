@@ -24,7 +24,7 @@
          ring/ring-defaults {:mvn/version "0.3.1"}
          ring-middleware-format {:mvn/version "0.7.2"}}
 
- :aliases {:dev {:extra-deps  {defunkt/revolt {:mvn/version "0.1.6"}}
+ :aliases {:dev {:extra-deps  {defunkt/revolt {:mvn/version "0.1.7"}}
                  :extra-paths ["target/assets"]
                  :main-opts   ["-m" "revolt.bootstrap"
                                "-c" "revolt.edn"]}
@@ -37,7 +37,7 @@
            ;; dependencies for clojurescript builds
            :dev/cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.238"}
                                    re-frame {:mvn/version "0.10.5"}
-                                   reagent {:mvn/version "0.8.0-alpha2"}
+                                   reagent {:mvn/version "0.8.1"}
                                    figwheel-sidecar {:mvn/version "0.5.15"}
                                    binaryage/devtools {:mvn/version "0.9.9"}}}
 
