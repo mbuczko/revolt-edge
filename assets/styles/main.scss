@@ -2,16 +2,22 @@ body {
   min-width: 640px;
 }
 
+.header {
+  background: #eee;
+  font-family: monospace;
+  padding: 6px 10px;
+  border-bottom: 1px solid #888;
+}
+
+.logged {
+  font-weight: bold;
+}
+
 .intro {
-    background: #eee;
     width: 920px;
     margin: auto;
     margin-top: 120px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 1px 4px 10px #ddd;
-    text-shadow: 1px 1px white;
 
     h1 {
         text-align: center;

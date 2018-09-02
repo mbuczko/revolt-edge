@@ -7,6 +7,7 @@
 .ctagsignore
 .tags
 .tags_sorted_by_file
+.rebel_readline_history
 .dir-locals.el
 .projectile
 .DS_Store
@@ -19,5 +20,6 @@ dist
 *-local.edn
 *.pid
 *.paw
+*.log
 gpg.edn
 node_modules

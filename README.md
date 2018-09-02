@@ -13,7 +13,7 @@ Now, depending on needs some or all of theses aliases may be used by `clj` tool 
 
 Here are some examples:
 
-### activate nrepl plugin only
+### activate nrepl plugin only (eg. to be able to connect from Cider)
 ``` sh
 clj -A:dev:dev/nrepl -p nrepl
 ```
@@ -23,30 +23,29 @@ clj -A:dev:dev/nrepl -p nrepl
 clj -A:dev:dev/cljs -p rebel -t clean
 ```
 
-### activate filesystem watcher, nRepl, figwheel and rebel plugins
+### activate filesystem watcher, nRepl, figwheel, rebel plugins and regenerate CSSes
 ``` sh
-clj -A:dev:dev/nrepl:dev/cljs -p watch,nrepl,figwheel,rebel
+clj -A:dev:dev/nrepl:dev/cljs -p watch,nrepl,figwheel,rebel -t clean,sass
 ```
 
 ### build a codox documentation (run a codox task)
 ``` sh
-clj -A:dev:dev/cljs -t codox
 clj -A:dev:dev/cljs -t codox:name=foo:version=1.2.2
 ```
 
-### build a codox documentation based on project info (run an info and codox tasks)
+### build a codox documentation based on preconfigured project information
 ``` sh
 clj -A:dev:dev/cljs -t info,codox
 ```
 
 ### build a fat, aot-ed capsule - aka "all deps included" (run clean, info, sass, cljs aot and capsule tasks)
 ``` sh
-clj -A:dev:dev/cljs:dev/pack -t clean,info,sass,cljs,aot:optimizations=advanced,capsule
+clj -A:dev:dev/cljs:dev/pack -t clean,info,sass,cljs,aot:compiler.optimizations=advanced,assets,capsule
 ```
 
 ### build a thin capsule (run clean, info, sass, cljs and capsule tasks)
 ``` sh
-clj -A:dev:dev/cljs:dev/pack -t clean,info,sass,cljs:optimizations=advanced,capsule:capsule-type=thin
+clj -A:dev:dev/cljs:dev/pack -t clean,info,sass,cljs:compiler.optimizations=advanced,assets,capsule:capsule-type=thin
 ```
 
 

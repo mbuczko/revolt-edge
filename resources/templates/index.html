@@ -11,6 +11,13 @@
         <link rel="stylesheet" href="/styles/main.css">
 	</head>
 	<body>
+        <div class="header">
+            {% if user %}
+            Logged in as: <span class="logged">{{ user.login }}</span> / <a href="/users/me"> about me </a>
+            {% else %}
+            <a href="/login">Sign in</a> (user: foo, password: pass)
+            {% endif %}
+        </div>
         <div class="main" id="container">
             <!-- main content goes here -->
         </div>

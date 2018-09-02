@@ -4,41 +4,48 @@
          org.clojure/tools.logging {:mvn/version "0.4.1"}
 
          mount {:mvn/version "0.1.12"}
-         prone {:mvn/version "1.5.0"}
          cprop {:mvn/version "0.1.11"}
+         prone {:mvn/version "1.5.0"}
 
          ;; http client/server, routing, templating
-         http-kit {:mvn/version "2.3.0-beta2"}
-         compojure {:mvn/version "1.6.0"}
+         http-kit {:mvn/version "2.3.0"}
+         compojure {:mvn/version "1.6.1"}
          cheshire {:mvn/version "5.8.0"}
-         selmer {:mvn/version "1.11.7"}
+         selmer {:mvn/version "1.11.8"}
+
+         ;; in-memory sql database driver
+         com.h2database/h2 {:mvn/version "1.4.197"}
 
          ;; monadic error handling
-         failjure {:mvn/version "1.2.0"}
+         failjure {:mvn/version "1.3.0"}
 
          ;; logging
          ch.qos.logback/logback-classic {:mvn/version "1.2.3"}
 
          ;; ring core and middlewares
          ring/ring-core {:mvn/version "1.6.3"}
-         ring/ring-defaults {:mvn/version "0.3.1"}
-         ring-middleware-format {:mvn/version "0.7.2"}}
+         ring/ring-defaults {:mvn/version "0.3.2"}
+         ring-middleware-format {:mvn/version "0.7.2"}
 
- :aliases {:dev {:extra-deps  {defunkt/revolt {:mvn/version "0.1.7"}}
+         ;; cerber OAuth2 provider
+         cerber/cerber-oauth2-provider {:mvn/version "1.0.0-SNAPSHOT"}
+         cerber/cerber-roles {:mvn/version "1.0.0-SNAPSHOT"}}
+
+ :aliases {:dev {:extra-deps  {defunkt/revolt {:mvn/version "1.0.0"}
+                               defunkt/revolt-flyway-task {:mvn/version "0.0.1"}}
                  :extra-paths ["target/assets"]
                  :main-opts   ["-m" "revolt.bootstrap"
                                "-c" "revolt.edn"]}
 
            ;; dependencies for nrepl
-           :dev/nrepl {:extra-deps {org.clojure/tools.nrepl {:mvn/version "0.2.13"}
-                                    cider/cider-nrepl {:mvn/version "0.18.0-SNAPSHOT"}
-                                    refactor-nrepl {:mvn/version "2.4.0-SNAPSHOT"}}}
+           :dev/nrepl {:extra-deps {refactor-nrepl {:mvn/version "2.4.0-SNAPSHOT"}
+                                    cider/cider-nrepl {:mvn/version "0.18.0"}}}
 
            ;; dependencies for clojurescript builds
-           :dev/cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.238"}
+           :dev/cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.339"}
+                                   com.bhauman/figwheel-main {:mvn/version "0.1.9-SNAPSHOT"}
                                    re-frame {:mvn/version "0.10.5"}
                                    reagent {:mvn/version "0.8.1"}
-                                   figwheel-sidecar {:mvn/version "0.5.15"}
                                    binaryage/devtools {:mvn/version "0.9.9"}}}
 
            ;; dependencies for packaging tasks
