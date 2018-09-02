@@ -1,6 +1,7 @@
 {:paths ["src/clj" "src/cljs" "test" "resources" "assets"]
  :deps  {org.clojure/clojure {:mvn/version "1.9.0"}
          org.clojure/tools.namespace {:mvn/version "0.3.0-alpha4"}
+         org.clojure/tools.reader {:mvn/version "1.3.0"}
          org.clojure/tools.logging {:mvn/version "0.4.1"}
 
          mount {:mvn/version "0.1.12"}

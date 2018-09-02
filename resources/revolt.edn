@@ -4,6 +4,7 @@
  :revolt.task/aot    {:extra-namespaces [clout.core
                                          mount.core
                                          failjure.core
+                                         clojure.tools.reader.reader-types
                                          clojure.tools.logging.impl]}
 
  :revolt.task/info   {:name "edge"
@@ -22,7 +23,7 @@
                       :assets-holders ["js" "css" "html"]}
 
  :revolt.task/codox  {:source-paths ["src/clj"]
-                      :source-uri "http://github.com/mbuczko/edge/blob/{version}/{filepath}#L{line}"
+                      :source-uri "http://github.com/mbuczko/revolt-edge/blob/{version}/{filepath}#L{line}"
                       :namespaces [edge.http
                                    edge.middleware]}
 
