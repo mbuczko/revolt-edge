@@ -40,7 +40,7 @@ clj -A:dev:dev/cljs -t info,codox
 
 ### build a fat, aot-ed capsule - aka "all deps included" (run clean, info, sass, cljs aot and capsule tasks)
 ``` sh
-clj -A:dev:dev/cljs:dev/pack -t clean,info,sass,cljs,aot:compiler.optimizations=advanced,assets,capsule
+clj -A:dev:dev/cljs:dev/pack -t clean,info,aot,sass,cljs:compiler.optimizations=advanced,assets,capsule
 ```
 
 ### build a thin capsule (run clean, info, sass, cljs and capsule tasks)
