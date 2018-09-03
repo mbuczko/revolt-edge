@@ -17,10 +17,9 @@
  :revolt.task/sass   {:source-path "assets/styles"
                       :output-dir "styles"}
 
- :revolt.task/assets {:source-paths ["assets"]
+ :revolt.task/assets {:assets-paths ["assets"]
                       :exclude-paths ["assets/styles"]
-                      :output-dir "assets"
-                      :assets-holders ["js" "css" "html"]}
+                      :output-dir "assets"}
 
  :revolt.task/codox  {:source-paths ["src/clj"]
                       :source-uri "http://github.com/mbuczko/revolt-edge/blob/{version}/{filepath}#L{line}"
@@ -52,8 +51,8 @@
  :revolt.plugin/rebel {:init-ns "edge.system"
                        :init-banner "\n ***** Welcome to EDGE *****\n\n Usage:  (go)    => runs edge system\n         (reset) => restarts the system\n"}
 
- :revolt.plugin/watch {:excluded-paths ["src/clj"]
-                       :on-change {:revolt.task/sass "glob:assets/styles/*.scss"}}
+ :revolt.plugin/watch {:on-change {:revolt.task/sass "glob:assets/styles/*.scss"
+                                   :revolt.task/test "glob:**/*.clj"}}
 
  :revolt.plugin/figwheel {:client-print-to [:console]
                           :builds ["main-ui"]}}
