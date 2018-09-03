@@ -17,10 +17,9 @@
  :revolt.task/sass   {:source-path "assets/styles"
                       :output-dir "styles"}
 
- :revolt.task/assets {:source-paths ["assets"]
+ :revolt.task/assets {:assets-paths ["assets"]
                       :exclude-paths ["assets/styles"]
-                      :output-dir "assets"
-                      :assets-holders ["js" "css" "html"]}
+                      :output-dir "assets"}
 
  :revolt.task/codox  {:source-paths ["src/clj"]
                       :source-uri "http://github.com/mbuczko/revolt-edge/blob/{version}/{filepath}#L{line}"
