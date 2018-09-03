@@ -52,8 +52,8 @@
  :revolt.plugin/rebel {:init-ns "edge.system"
                        :init-banner "\n ***** Welcome to EDGE *****\n\n Usage:  (go)    => runs edge system\n         (reset) => restarts the system\n"}
 
- :revolt.plugin/watch {:excluded-paths ["src/clj"]
-                       :on-change {:revolt.task/sass "glob:assets/styles/*.scss"}}
+ :revolt.plugin/watch {:on-change {:revolt.task/sass "glob:assets/styles/*.scss"
+                                   :revolt.task/test "glob:**/*.clj"}}
 
  :revolt.plugin/figwheel {:client-print-to [:console]
                           :builds ["main-ui"]}}
