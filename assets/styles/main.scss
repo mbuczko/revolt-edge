@@ -1,32 +1,27 @@
+@import 'icon';
+@import 'success';
+
 body {
   min-width: 640px;
 }
 
 .header {
-  background: #eee;
+  background: #f3f3f3;
   font-family: monospace;
+  font-size: 0.9em;
   padding: 6px 10px;
-  border-bottom: 1px solid #888;
-}
+  border-bottom: 1px solid #ddd;
 
-.logged {
-  font-weight: bold;
+  .logged {
+    font-weight: bold;
+  }
 }
 
 .intro {
-    width: 920px;
-    margin: auto;
-    margin-top: 120px;
-    padding: 20px;
+  margin: auto;
+  margin-top: 60px;
 
-    h1 {
-        text-align: center;
-    }
-    p {
-        color: #666;
-        text-align: center;
-    }
-    span {
-        color: blue;
-    }
+  h3,p {
+    text-align: center;
+  }
 }

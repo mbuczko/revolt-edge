@@ -45,9 +45,10 @@
            ;; dependencies for clojurescript builds
            :dev/cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.339"}
                                    com.bhauman/figwheel-main {:mvn/version "0.1.9-SNAPSHOT"}
+                                   binaryage/devtools {:mvn/version "0.9.9"}
+                                   defunkt/antizer {:mvn/version "1.0.0-SNAPSHOT"}
                                    re-frame {:mvn/version "0.10.5"}
-                                   reagent {:mvn/version "0.8.1"}
-                                   binaryage/devtools {:mvn/version "0.9.9"}}}
+                                   reagent {:mvn/version "0.8.1"}}}
 
            ;; dependencies for packaging tasks
            :dev/pack {:extra-deps {co.paralleluniverse/capsule {:mvn/version "1.0.3"}
