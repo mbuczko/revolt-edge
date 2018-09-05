@@ -28,7 +28,13 @@
 
  :revolt.task/cljs   {:compiler {:output-dir "scripts/out"
                                  :asset-path "scripts/out"
-                                 :preloads [devtools.preload]}
+                                 :preloads [devtools.preload]
+                                 :foreign-libs [{:file "assets/scripts/antd.inc.js"
+                                                 :file-min "assets/scripts/antd.min.inc.js"
+                                                 :provides ["cljsjs.antd"]
+                                                 :requires ["cljsjs.react"
+                                                            "cljsjs.react.dom"
+                                                            "cljsjs.moment"]}]}
                       :builds [{:id "main-ui"
                                 :source-paths ["src/cljs"]
                                 :compiler {:main "edge.main"

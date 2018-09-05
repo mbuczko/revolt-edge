@@ -23,9 +23,9 @@ clj -A:dev:dev/nrepl -p nrepl
 clj -A:dev:dev/cljs -p rebel -t clean
 ```
 
-### activate filesystem watcher, nRepl, figwheel, rebel plugins and regenerate CSSes
+### activate filesystem watcher, nRepl, figwheel, rebel plugins, regenerate CSSes and initialize tests
 ``` sh
-clj -A:dev:dev/nrepl:dev/cljs -p watch,nrepl,figwheel,rebel -t clean,sass
+clj -A:dev:dev/nrepl:dev/cljs -p watch,nrepl,figwheel,rebel -t clean,sass,test
 ```
 
 ### build a codox documentation (run a codox task)
