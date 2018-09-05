@@ -9,19 +9,17 @@
             [ring.middleware.format :refer [wrap-restful-format]]
             [selmer.middleware :refer [wrap-error-page]]))
 
-(defn wrap-internal-error [handler & {:keys [error-response error-response-handler]}]
+(defn wrap-internal-error [handler & {:keys [error-response error-handler]}]
   (fn [req]
     (try (handler req)
          (catch Throwable t
-           (log/error (.printStackTrace t))
+           (when error-handler (error-handler t))
            {:status 500
             :headers {"Content-Type" "text/html"}
-            :body (if error-response-handler
-                    (error-response-handler req)
-                    error-response)}))))
+            :body error-response}))))
 
 (defn development-middlewares [handler]
-  (log/info "development middlewares applied")
+  (log/info "applying development middlewares")
   (-> handler
       (wrap-error-page)
       (wrap-exceptions {:app-namespaces ["edge"]})
@@ -29,11 +27,11 @@
                            :response-options {:json-kw {:pretty true}})))
 
 (defn production-middlewares [handler]
-  (log/info "production middlewares applied")
+  (log/info "applying production middlewares")
   (-> handler
-      (wrap-internal-error :log (fn [e] (log/error e))
+      (wrap-internal-error :error-handler  #(log/error %)
                            :error-response {:error 500
-                                            :error_description "Something bad happened."})
+                                            :error_description "Uh oh, something bad happened on our side ¯\\_(ツ)_/¯"})
       (wrap-restful-format :formats [:json-kw])))
 
 (defn wrap-middlewares [handler]

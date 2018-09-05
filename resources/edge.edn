@@ -1,5 +1,26 @@
 {:http  {:port 8090}
 
+ :clients [{:id "KEJ57AVGDWJA4YSEUBX3H3M2RBW53WLA"
+            :secret "BOQUIIPBU5LDJ5BBZMZQYZZK2KTLHLBS"
+            :info "Default client"
+            :redirects ["http://cerber.test:8090"]
+            :grants ["authorization_code" "password"]
+            :scopes ["resources:read" "resources:write" "resources:manage"]
+            :approved? false}]
+
+ :users   [{:login "admin"
+            :email "admin@bar.com"
+            :name "Admin Bar"
+            :enabled? true
+            :password "secret"
+            :roles #{"user/admin"}}
+           {:login "foo"
+            :email "foo@bar.com"
+            :name "Foo Bar"
+            :enabled? true
+            :password "pass"
+            :roles #{"user/all"}}]
+
  :roles {"user/admin"   #{"photos:*" "comments:*"}
          "user/all"     #{"photos:read" "photos:write" "comments:read" "comments:write"}
          "user/limited" #{"photos:read" "comments:read"}}

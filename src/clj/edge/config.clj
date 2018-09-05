@@ -2,8 +2,7 @@
   (:require [cprop.core :as cprop]
             [cprop.source :refer [from-env from-resource]]
             [failjure.core :as f]
-            [mount.core :as mount :refer [defstate]]
-            [cerber.oauth2.standalone.server]))
+            [mount.core :as mount :refer [defstate]]))
 
 (defn load-resource
   "Loads single configuration resource.

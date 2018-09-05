@@ -25,3 +25,23 @@ body {
     text-align: center;
   }
 }
+
+.login-container {
+  background-color: #f3f3f3;
+  padding: 20px 20px 0;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  box-shadow: 1px 1px 10px #bbb;
+  position: relative;
+  margin: 0 auto;
+  width: 420px;
+  top: 60px;
+
+  h1 {
+    text-align: center;
+    color: #666;
+  }
+  button {
+    width: 100%;
+  }
+}

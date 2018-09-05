@@ -1,15 +1,13 @@
 (ns edge.system
   (:require [clojure.tools.namespace.repl :as tn]
             [mount.core :refer [defstate] :as mount]
-            [cerber.oauth2.standalone.server :as oauth2]
+            [edge.oauth2]
             [edge.http]))
 
 (defn go []
   ;; track changes only from certain dirs
   (tn/set-refresh-dirs "src/clj")
-
-  ;; we don't want to start cerber's http server as we start our own
-  (mount/start-without #'oauth2/http-server))
+  (mount/start))
 
 (defn stop []
   (mount/stop))

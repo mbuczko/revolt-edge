@@ -29,7 +29,7 @@
          ring-middleware-format {:mvn/version "0.7.2"}
 
          ;; cerber OAuth2 provider
-         cerber/cerber-oauth2-provider {:mvn/version "1.0.0-SNAPSHOT"}
+         cerber/cerber-oauth2-provider {:mvn/version "1.0.0"}
          cerber/cerber-roles {:mvn/version "1.0.0-SNAPSHOT"}}
 
  :aliases {:dev {:extra-deps  {defunkt/revolt {:mvn/version "1.1.0"}

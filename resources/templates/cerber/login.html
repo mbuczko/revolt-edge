@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="metrics visualized">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Authentication</title>
+
+        <link rel="stylesheet" href="/styles/vendor/antd.min.css">
+        <link rel="stylesheet" href="/styles/main.css">
+    </head>
+    <body>
+        <div class="login-container">
+            <h1><span> EDGE authentication </span></h1>
+            <form class="ant-form ant-form-horizontal login-form" action="/login" method="POST">
+
+                {{ csrf|safe }}
+                {% if failed? %} failed {% endif %}
+
+                <div class="ant-row ant-form-item">
+                    <div class="ant-form-item-control-wrapper">
+                        <div class="ant-form-item-control ">
+                            <span class="ant-input-affix-wrapper">
+                                <span class="ant-input-prefix">
+                                    <i class="anticon anticon-user" style="font-size: 13px;"></i>
+                                </span>
+                                <input type="text" placeholder="Username" value="" name="username" class="ant-input ant-input-lg">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ant-row ant-form-item">
+                    <div class="ant-form-item-control-wrapper">
+                        <div class="ant-form-item-control ">
+                            <span class="ant-input-affix-wrapper">
+                                <span class="ant-input-prefix">
+                                    <i class="anticon anticon-lock" style="font-size: 13px;"></i>
+                                </span>
+                                <input type="password" placeholder="Password" value="" name="password" class="ant-input ant-input-lg">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ant-row ant-form-item">
+                    <div class="ant-form-item-control-wrapper">
+                        <button type="submit" class="ant-btn login-form-button ant-btn-primary ant-btn-lg">
+                            <span>Log me in</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
