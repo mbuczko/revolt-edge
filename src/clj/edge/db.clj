@@ -8,8 +8,5 @@
                                 :min-idle   1
                                 :max-idle   4
                                 :max-active 32
-                                :jdbc-url "jdbc:h2:mem:testdb;MODE=MySQL;INIT=RUNSCRIPT FROM 'classpath:/db/migrations/h2/cerber_schema.sql'"
-                                ;:driver-class "org.postgresql.Driver"
-                                ;:jdbc-url "jdbc:postgresql://localhost:5432/template1?user=postgres"
-                                }))
+                                :jdbc-url "jdbc:h2:mem:testdb;MODE=MySQL;INIT=RUNSCRIPT FROM 'classpath:/db/migrations/h2/cerber_schema.sql'"}))
   :stop (conman/disconnect! db-conn))

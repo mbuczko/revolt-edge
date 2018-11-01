@@ -47,9 +47,10 @@
 (defn api-routes
   [roles scopes->roles]
   (wrap-defaults
-   (routes oauth2-routes (-> user-api-routes
-                             (wrap-routes cerber.roles/wrap-permissions roles scopes->roles)
-                             (wrap-routes cerber.handlers/wrap-authorized)))
+   (routes oauth2-routes
+           (-> user-api-routes
+               (wrap-routes cerber.roles/wrap-permissions roles scopes->roles)
+               (wrap-routes cerber.handlers/wrap-authorized)))
    api-defaults))
 
 (defn maybe-authorized-routes

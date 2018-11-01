@@ -27,8 +27,13 @@
                                    edge.middleware]}
 
  :revolt.task/cljs   {:compiler {:output-dir "scripts/out"
-                                 :asset-path "scripts/out"
+                                 :asset-path "/scripts/out"
                                  :preloads [devtools.preload]
+                                 :modules {:cljs-base {:output-to "scripts/base.js"}
+                                           :vendor    {:entries #{re-frame.core}
+                                                       :output-to "scripts/vendor.js"}
+                                           :main      {:entries #{edge.main}
+                                                       :output-to "scripts/main.js"}}
                                  :foreign-libs [{:file "assets/scripts/antd.inc.js"
                                                  :file-min "assets/scripts/antd.min.inc.js"
                                                  :provides ["cljsjs.antd"]
@@ -36,9 +41,7 @@
                                                             "cljsjs.react.dom"
                                                             "cljsjs.moment"]}]}
                       :builds [{:id "main-ui"
-                                :source-paths ["src/cljs"]
-                                :compiler {:main "edge.main"
-                                           :output-to "scripts/main.js"}}]}
+                                :source-paths ["src/cljs"]}]}
 
  :revolt.task/capsule {:exclude-paths #{"test" "src/cljs"}
                        :output-jar "dist/edge.jar"
