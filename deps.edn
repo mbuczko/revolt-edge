@@ -29,8 +29,8 @@
          ring-middleware-format {:mvn/version "0.7.2"}
 
          ;; cerber OAuth2 provider
-         cerber/cerber-oauth2-provider {:mvn/version "1.1.0"}
-         cerber/cerber-roles {:mvn/version "1.0.0-SNAPSHOT"}}
+         cerber/cerber-oauth2-provider {:mvn/version "2.0.0"}
+         cerber/cerber-roles {:mvn/version "1.0.0"}}
 
  :aliases {:dev {:extra-deps  {defunkt/revolt {:mvn/version "1.2.0"}
                                defunkt/revolt-flyway-task {:mvn/version "0.0.1"}}
@@ -39,8 +39,8 @@
                                "-c" "revolt.edn"]}
 
            ;; dependencies for nrepl
-           :dev/nrepl {:extra-deps {refactor-nrepl {:mvn/version "2.4.0-SNAPSHOT"}
-                                    cider/cider-nrepl {:mvn/version "0.18.0"}}}
+           :dev/nrepl {:extra-deps {refactor-nrepl {:mvn/version "2.4.0"}
+                                    cider/cider-nrepl {:mvn/version "0.21.0"}}}
 
            ;; dependencies for clojurescript builds
            :dev/cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.339"}
