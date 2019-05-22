@@ -1,7 +1,11 @@
 (ns edge.config-test
-  (:require [clojure.test :refer :all]
-            [edge.config :refer :all]))
+  (:require [clojure.test :refer [deftest testing is]]
+            [edge.config :refer [app-config]]
+            [mount.core :as mount]))
+
+(mount/start)
 
 (deftest sample-test
-  (testing "dummy assertion"
-    (is (= 1 1))))
+  (testing "http server configuration"
+    (let [http-config (:http app-config)]
+      (is (= 8090 (:port http-config))))))

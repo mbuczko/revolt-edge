@@ -12,10 +12,10 @@
                       :version "0.0.1"
                       :description "Sample project to see revolt in action."}
 
- :revolt.task/test   {:report :pretty}
+ :revolt.task/test   {:report eftest.report.pretty/report}
 
  :revolt.task/sass   {:source-path "assets/styles"
-                      :output-dir "styles"}
+                      :output-path "styles"}
 
  :revolt.task/assets {:assets-paths ["assets"]
                       :exclude-paths ["assets/styles"]
@@ -26,8 +26,8 @@
                       :namespaces [edge.http
                                    edge.middleware]}
 
- :revolt.task/cljs   {:compiler {:output-dir "scripts/out"
-                                 :asset-path "/scripts/out"
+ :revolt.task/cljs   {:compiler {:output-dir "scripts"
+                                 :asset-path "/scripts"
                                  :preloads [devtools.preload]
                                  :modules {:cljs-base {:output-to "scripts/base.js"}
                                            :vendor    {:entries #{re-frame.core}
