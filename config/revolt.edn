@@ -43,7 +43,7 @@
                       :builds [{:id "main-ui"
                                 :source-paths ["src/cljs"]}]}
 
- :revolt.task/capsule {:exclude-paths #{"test" "src/cljs"}
+ :revolt.task/capsule {:exclude-paths #{"test" "config" "src/cljs"}
                        :output-jar "dist/edge.jar"
                        :capsule-type :thin
                        :main "edge.main"

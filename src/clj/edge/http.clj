@@ -78,15 +78,14 @@
 (defn init-server []
   (log/infof "starting HTTP server on %s port" (-> app-config :http :port))
 
-  (when-not (= (:env app-config) "prod")
+  ;; no caching for dev environment
+  (selmer/cache-off!)
 
-    ;; no caching for dev environment
-    (selmer/cache-off!)
+  ;; initialize user- and client-store with sample entries
+  (oauth2.core/init-users (:users app-config))
+  (oauth2.core/init-clients (:clients app-config))
 
-    ;; initialize user- and client-store with sample entries
-    (oauth2.core/init-users (:users app-config))
-    (oauth2.core/init-clients (:clients app-config)))
-
+  (log/infof "initialized users on [%s] environment" (-> app-config :env))
   (web/run-server (middleware/wrap-middlewares (init-routes))
                   (:http app-config)))
 
